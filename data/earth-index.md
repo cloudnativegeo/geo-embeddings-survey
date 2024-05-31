@@ -16,6 +16,7 @@ Earth Index is a platform for tile-level geospatial search and classification of
 - **License:** CC-BY
 
 ## Metadata
+Following the [GeoparquetSpec](https://github.com/opengeospatial/geoparquet/blob/main/format-specs/geoparquet.md), the following metadata is stored under the `geo` key in the Parquet metadata.
 
 ### File metadata
 
