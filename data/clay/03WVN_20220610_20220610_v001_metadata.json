@@ -1,0 +1,158 @@
+{
+  "geo": {
+    "columns": {
+      "geometry": {
+        "bbox": [
+          -167.18803051829005,
+          64.84192675131861,
+          -164.83644584231885,
+          65.8215885781936
+        ],
+        "crs": {
+          "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+          "area": "World.",
+          "bbox": {
+            "east_longitude": 180,
+            "north_latitude": 90,
+            "south_latitude": -90,
+            "west_longitude": -180
+          },
+          "coordinate_system": {
+            "axis": [
+              {
+                "abbreviation": "Lon",
+                "direction": "east",
+                "name": "Geodetic longitude",
+                "unit": "degree"
+              },
+              {
+                "abbreviation": "Lat",
+                "direction": "north",
+                "name": "Geodetic latitude",
+                "unit": "degree"
+              }
+            ],
+            "subtype": "ellipsoidal"
+          },
+          "datum_ensemble": {
+            "accuracy": "2.0",
+            "ellipsoid": {
+              "inverse_flattening": 298.257223563,
+              "name": "WGS 84",
+              "semi_major_axis": 6378137
+            },
+            "id": {
+              "authority": "EPSG",
+              "code": 6326
+            },
+            "members": [
+              {
+                "name": "World Geodetic System 1984 (Transit)"
+              },
+              {
+                "name": "World Geodetic System 1984 (G730)"
+              },
+              {
+                "name": "World Geodetic System 1984 (G873)"
+              },
+              {
+                "name": "World Geodetic System 1984 (G1150)"
+              },
+              {
+                "name": "World Geodetic System 1984 (G1674)"
+              },
+              {
+                "name": "World Geodetic System 1984 (G1762)"
+              },
+              {
+                "name": "World Geodetic System 1984 (G2139)"
+              }
+            ],
+            "name": "World Geodetic System 1984 ensemble"
+          },
+          "id": {
+            "authority": "OGC",
+            "code": "CRS84"
+          },
+          "name": "WGS 84 (CRS84)",
+          "scope": "Not known.",
+          "type": "GeographicCRS"
+        },
+        "encoding": "WKB",
+        "geometry_types": [
+          "Polygon"
+        ]
+      }
+    },
+    "creator": {
+      "library": "geopandas",
+      "version": "0.14.1"
+    },
+    "primary_column": "geometry",
+    "version": "1.0.0"
+  },
+  "pandas": {
+    "column_indexes": [
+      {
+        "field_name": null,
+        "metadata": {
+          "encoding": "UTF-8"
+        },
+        "name": null,
+        "numpy_type": "object",
+        "pandas_type": "unicode"
+      }
+    ],
+    "columns": [
+      {
+        "field_name": "index",
+        "metadata": null,
+        "name": "index",
+        "numpy_type": "int64",
+        "pandas_type": "int64"
+      },
+      {
+        "field_name": "source_url",
+        "metadata": null,
+        "name": "source_url",
+        "numpy_type": "string",
+        "pandas_type": "unicode"
+      },
+      {
+        "field_name": "date",
+        "metadata": null,
+        "name": "date",
+        "numpy_type": "date32[day][pyarrow]",
+        "pandas_type": "date"
+      },
+      {
+        "field_name": "embeddings",
+        "metadata": null,
+        "name": "embeddings",
+        "numpy_type": "object",
+        "pandas_type": "list[float32]"
+      },
+      {
+        "field_name": "geometry",
+        "metadata": null,
+        "name": "geometry",
+        "numpy_type": "object",
+        "pandas_type": "bytes"
+      }
+    ],
+    "creator": {
+      "library": "pyarrow",
+      "version": "14.0.1"
+    },
+    "index_columns": [
+      {
+        "kind": "range",
+        "name": null,
+        "start": 0,
+        "step": 1,
+        "stop": 417
+      }
+    ],
+    "pandas_version": "2.1.3"
+  }
+}
