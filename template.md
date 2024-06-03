@@ -23,7 +23,7 @@
 ## Columns
 | Field Name | Type | Description |
 | ---------- | ---- | ----------- |
-| geometry | geometry | *what the geometry represents |
+| geometry | geometry | *what the geometry represents* |
 | *field2* | *string* | *description* |
 
 ## File structure
