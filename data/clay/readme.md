@@ -9,6 +9,8 @@
 ## Overview
 Clay, "AI for Earth," is a non-profit effort to bring the latest progress in AI and geospatial technology to most people and organizations. Clay uses open data, open source, open models, and responsible AI frameworks to make Earth observation a force for positive change. Clay creates, maintains, and releases the Clay model, which frontloads undifferenciated computation to enable faster, easier and cheaper use of geospatial data. We also create tools to integrate the model. Finally, we also create no-code apps to maximize usability and impact for non-technical users.
 
+## Use Cases
+
 ## Data
 - **URL:** [https://beta.source.coop/clay/clay-model-v0-embeddings/](https://beta.source.coop/clay/clay-model-v0-embeddings/)
 - **Documentation:** [https://beta.source.coop/repositories/clay/clay-model-v0-embeddings/description/](https://beta.source.coop/repositories/clay/clay-model-v0-embeddings/description/)

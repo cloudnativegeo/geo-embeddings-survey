@@ -9,6 +9,8 @@
 ## Overview
 Earth Index is a platform for tile-level geospatial search and classification of satellite imagery. Earth Index works by “pre-indexing” the planet for search using earth observation foundation models.
 
+## Use Cases
+
 ## Data
 - **URL:** [tbd, on source.coop]
 - **Documentation:** [tbd]

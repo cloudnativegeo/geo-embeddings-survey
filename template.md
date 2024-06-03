@@ -7,7 +7,11 @@
 - **Homepage:** 
 
 ## Overview
-*details about this geoparquet embeddings submission - use cases, decisions made in structuring, goals, etc*
+*details about this geoparquet embeddings submission - organization, decisions made in structuring, goals, etc*
+
+## Use Cases
+
+*details about what these embeddings are used for, what use cases the overall project is trying to solve*
 
 ## Data
 - **URL:** *link to the full dataset*
