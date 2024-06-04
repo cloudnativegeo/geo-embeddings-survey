@@ -86,8 +86,8 @@ and [licensing](https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/licens
 ### Embeddings metadata
 | Field Name | Type | Description |
 | ---------- | ---- | ----------- |
-| embeddings_dim | int | Embeddings size |
-| embeddings_quantization | string | Description of quantization scheme, if any |
+| dim | int | Embeddings size |
+| quantization | string | Description of quantization scheme, if any |
 
 ## Design thoughts / open questions
 - We also duplicate most of this metadata in STAC and have reused STAC metadata definitions to ease interoperability between parquet and STAC .
