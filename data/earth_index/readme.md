@@ -2,7 +2,7 @@
 
 ## Submission Details
 
-- **Submitter (Affiliation):** Ben Strong (Earth Genome), [Hutch (Tom) Ingold](https://github.com/tingold) (Earth Genome)
+- **Submitter (Affiliation):** [Ben Strong](https://github.com/bengmstrong) (Earth Genome), [Hutch (Tom) Ingold](https://github.com/tingold) (Earth Genome)
 - **Data Provider (Legal Entity):** Earth Genome (501(c)(3) Nonprofit)
 - **Homepage:** http://earthindex.ai/
 
