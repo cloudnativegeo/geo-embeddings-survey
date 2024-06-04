@@ -21,7 +21,6 @@
       "type": "string",
       "const": "0.0.1"
     },
-
     "model": {
       "description": "Information about the model that created these embeddings",
       "type": "object",
@@ -56,40 +55,47 @@
         "source"
       ]
     },
-
-    "embedding_dim": {
-      "description": "the length of the embeddings vector",
-      "type": "number"
-    },
-    "embedding_quantization": {
-      "description": "a description of quantization applied, if any",
-      "type": "string"
+    "embedding": {
+      "description": "Embedding metadata",
+      "type": "object",
+      "properites": [
+        {
+          "dim": {
+            "description": "the length of the embeddings vector",
+            "type": "number"
+          },
+          "quantization": {
+            "description": "a description of quantization applied, if any",
+            "type": "string"
+          }
+        }
+      ]
     },
     "source_datasets": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "dataset_id": {
+          "id": {
             "description": "",
             "type": "string"
           },
-          "dataset_source": {
+          "source": {
             "description": "",
             "type": "string"
           },
-          "dataset_name": {
+          "name": {
             "description": "",
             "type": "string"
           },
-          "dataset_description": {
+          "description": {
             "description": "",
             "type": "string"
           }
         },
         "required": [
-          "dataset_id",
-          "dataset_source"
+          "id",
+          "source"
         ]
       }
     }
@@ -102,8 +108,7 @@
     "start_datetime",
     "end_datetime",
     "datasets",
-    "embedding_dim",
-    "embedding_quantization"
+    "embedding"
   ]
 }
   
