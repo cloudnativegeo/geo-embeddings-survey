@@ -42,8 +42,8 @@ The files orginate from MGRS 100km x 100km imagery tile, e.g. `17SNB`, however t
 so they can be universally referenced. 
 
 ## Metadata
-ˇThe `embedding.parquet` file is also a valid  [Geoparquet file](https://github.com/opengeospatial/geoparquet/blob/main/format-specs/geoparquet.md), with the expected metadata stored under the `geo` key. 
-Additionally we have added an `emb` key which is where the embeddings metadata is store in JSON format. 
+The `embedding.parquet` file is also a valid  [Geoparquet file](https://github.com/opengeospatial/geoparquet/blob/main/format-specs/geoparquet.md), with the expected metadata stored under the `geo` key. 
+Additionally we have added an `emb` key for the embeddings metadata - also in JSON format. 
 
 The metadata adheres to the [json schema](./schema.json) provided. For interoperability with STAC this schema references
 some STAC schema elements, specifically [provider](https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/provider.json), 
