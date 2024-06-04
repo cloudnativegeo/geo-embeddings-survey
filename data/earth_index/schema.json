@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://earthindex.ai/spec/emb.schema.json",
+  "title": "Parquet Embedding Metadata",
+  "description": "Parquet Embedding Metadata",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/provider.json"
+    },
+    {
+      "$ref": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/datetime.json"
+    },
+    {
+      "$ref": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/licensing.json"
+    }
+  ],
+  "properties": {
+    "version": {
+      "description": "Spec version",
+      "type": "string",
+      "const": "0.0.1"
+    },
+    "model": {
+      "description": "Information about the model that created these embeddings",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Id of the model",
+          "type": "string"
+        },
+        "family": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "description": {
+          "description": "",
+          "type": "string"
+        },
+        "config": {
+          "description": "",
+          "type": "string"
+        },
+        "source": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source"
+      ]
+    },
+    "embedding": {
+      "description": "Embedding metadata",
+      "type": "object",
+      "properites": [
+        {
+          "dim": {
+            "description": "the length of the embeddings vector",
+            "type": "number"
+          },
+          "quantization": {
+            "description": "a description of quantization applied, if any",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "source_datasets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "",
+            "type": "string"
+          },
+          "source": {
+            "description": "",
+            "type": "string"
+          },
+          "name": {
+            "description": "",
+            "type": "string"
+          },
+          "description": {
+            "description": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "source"
+        ]
+      }
+    }
+  },
+  "required": [
+    "version",
+    "model",
+    "providers",
+    "datetime",
+    "start_datetime",
+    "end_datetime",
+    "datasets",
+    "embedding"
+  ]
+}
+  

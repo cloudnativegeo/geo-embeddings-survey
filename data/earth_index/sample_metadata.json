@@ -1,0 +1,32 @@
+{
+  "version": "0.0.1",
+  "model": {
+    "id": "dinov2_vits14_softcon",
+    "version": "2.0.0",
+    "family": "DinoV2",
+    "name": "SoftCon",
+    "description": "Multi-label Guided Soft Contrastive Learning for Efficient Earth Observation Pretraining",
+    "config": "The class token is extracted from the last layer of the transformer model",
+    "source": "https://github.com/zhu-xlab/softcon"
+  },
+  "providers": [
+    {
+      "name": "EarthGenome",
+      "url": "https://earthgenome.org"
+    }
+  ],
+  "license": "CC-BY-4.0",
+  "datetime": "2023-07-02T00:00:00Z",
+  "start_datetime": "2023-01-01T00:00:00Z",
+  "end_datetime": "2024-01-01T00:00:00Z",
+  "datasets": [
+    {
+      "source": "https://stac.earthindex.dev/collections/sentinel-2-l2a-aws",
+      "name": "Sentinel2 Temporal Mosaics"
+    }
+  ],
+  "embedding": {
+    "dim": 384,
+    "quantization": "None"
+  }
+}

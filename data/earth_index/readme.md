@@ -2,7 +2,7 @@
 
 ## Submission Details
 
-- **Submitter (Affiliation):** Ben Strong (Earth Genome)
+- **Submitter (Affiliation):** [Ben Strong](https://github.com/bengmstrong) (Earth Genome), [Hutch (Tom) Ingold](https://github.com/tingold) (Earth Genome)
 - **Data Provider (Legal Entity):** Earth Genome (501(c)(3) Nonprofit)
 - **Homepage:** http://earthindex.ai/
 
@@ -23,56 +23,76 @@ We've been using embeddings for human-in-the-loop tile-level search (approximate
 - **License:** CC-BY
 
 ## Samples
-To be added soon
+- [sample_metadata.json](./sample_metadata.json)
+- [embeddings.parquet](./21MTN.parquet)
+
+## Validation
+- GeoParquet validation: `gpq validate embeddings.parquet`
+- Emb sample metadata and parquet metadata validation: `python3 validate.py`
 
 ## Columns
 | Field Name | Type | Description |
-| ---------- | ---- | ----------- |
-| geometry | geometry |Geometry of tile used to generate embeddings |
-| tile_id | string | Unique identifier for tile |
-| embedding | array<float> | The vector embedding |
+|------------| ---- | ----------- |
+| geometry   | geometry |Geometry of tile used to generate embeddings |
+| id         | string | Unique identifier for tile |
+| embedding  | array<float> | The vector embedding |
 
 ## File structure
-Within a set of embeddings, files are separated by MGRS 100km x 100km tile, e.g. `17SNB`. The tile name is also used for the name of the file.
+The files originate from MGRS 100km x 100km imagery tile, e.g. `21MNT`, which the parquet files inherit.
+That being said, using a filename as metadata is an easy way to lose context so we make sure that all relevant 
+metadata from the filename also gets embedding in the file itself.
 
-This will likely change as we explore other grid systems.
 
 ## Metadata
-Following the [Geoparquet Spec](https://github.com/opengeospatial/geoparquet/blob/main/format-specs/geoparquet.md), the following metadata is stored under the `geo` key in the Parquet metadata.
+The `embedding.parquet` file is also a valid  [Geoparquet file](https://github.com/opengeospatial/geoparquet/blob/main/format-specs/geoparquet.md), with the expected metadata stored under the `geo` key. 
+Additionally we have added an `emb` key for the embeddings metadata - also in JSON format. 
 
-### File metadata
+The metadata adheres to the [json schema](./schema.json) provided. For interoperability with STAC this schema references
+some STAC schema elements, specifically [provider](https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/provider.json), 
+      [datetime](https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/datetime.json)
+and [licensing](https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/licensing.json) 
 
-| Field Name | Type | Description |
-| ---------- | ---- | ----------- |
-| version | string | GeoParquet spec: version identifier |
-| primary_column | string | GeoParquet spec: The name of the "primary" geometry column. |
-| model | object<string, object> |Model metadata |
-| dataset | object<string, object> | Dataset metadata |
-| embedding | object<string, object> | Embeddings metadata |
-| columns | object<string, Column Metadata> | GeoParquet spec: Metadata about geometry columns. Each key is the name of a geometry column in the table. |
+### EMB Metadata
+
+| Field Name      | Type                   | Description                                                           |
+|-----------------|------------------------|-----------------------------------------------------------------------|
+| version         | string                 | fixed at `0.0.1`  (required)                                          |
+| model           | object<string, object> | see Model metadata                                                    |
+| providers       | object<string, object> | provider metadata -- see [provider](https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/provider.json) | 
+| licensing       | object<string, object> | licensing metadata -- see [licensing](https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/licensing.json)  |   
+| datetime        | object<string, object> | datetime metadata -- see [datetime](https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/datetime.json) |
+| source_datasets | object<string, object> | datasets used to generate embeddings - see Dataset metadata |
+| embedding       | object<string, object> | Embeddings metadata                                                   |
+
+
 
 ### Model metadata
-| Field Name | Type | Description |
-| ---------- | ---- | ----------- |
-| model_name | string | Name of model |
-| model_source | string | URI for model |
-| model_config | string |Configuration of model; includes information needed to generate embeddings (e.g. what layers were extracted) |
+| Field Name  | Type | Description                         |
+|-------------| ---- |-------------------------------------|
+| id          | string | id of model (required)              |
+| source      | string | URI for model  (required)           |
+| version     | string | version of model                    |
+| family      | string | model family                        |
+| name        | string | Name of model                       |
+| description | string | human readable description of model |
+| config      | string | Configuration of model; includes information needed to generate embeddings (e.g. what layers were extracted) |
 
 ### Dataset metadata
-| Field Name | Type | Description |
-| ---------- | ---- | ----------- |
-| dataset_name | string | Dataset used to generate the embeddings |
-| dataset_date | string |  Date(s) that the dataset represents |
-| dataset_source | string | URI for dataset that was used by the embeddings model |
+| Field Name  | Type | Description                                                      |
+|-------------| ---- |------------------------------------------------------------------|
+| id          | string | Dataset id (required)                                            |
+| name        | string | Dataset used to generate the embeddings                          | 
+| description | string | Dataset used to generate the embeddings                          | 
+| source      | string | URI for dataset that was used by the embeddings model (required) |
 
 ### Embeddings metadata
 | Field Name | Type | Description |
 | ---------- | ---- | ----------- |
-| embeddings_dim | int | Embeddings size |
-| embeddings_quantization | string | Description of quantization scheme, if any |
+| dim | int | Embeddings size |
+| quantization | string | Description of quantization scheme, if any |
 
 ## Design thoughts / open questions
-- We also duplicate most of this metadata in STAC; a STAC extension for embeddings should also probably be part of this conversation.
-- We've opted to put the metadata within the `geo` key, as this fundamentally builds on geoparquet. But we're not committed to this and are interested in other opinions.
+- We also duplicate most of this metadata in STAC and have reused STAC metadata definitions to ease interoperability between parquet and STAC .
+- We've opted to put the metadata within the `emb` key, in the same style as geoparquet. But we're not committed to this and are interested in other opinions.
 
 
