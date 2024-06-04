@@ -24,7 +24,7 @@ We've been using embeddings for human-in-the-loop tile-level search (approximate
 
 ## Samples
 - [sample_metadata.json](./sample_metadata.json)
-- [embeddings.parquet](./embeddings.parquet)
+- [embeddings.parquet](./21MTN.parquet)
 
 ## Validation
 - GeoParquet validation: `gpq validate embeddings.parquet`
@@ -38,8 +38,10 @@ We've been using embeddings for human-in-the-loop tile-level search (approximate
 | embedding  | array<float> | The vector embedding |
 
 ## File structure
-The files orginate from MGRS 100km x 100km imagery tile, e.g. `17SNB`, however the file contains embeddings with full geometries
-so they can be universally referenced. 
+The files originate from MGRS 100km x 100km imagery tile, e.g. `21MNT`, which the parquet files inherit.
+That being said, using a filename as metadata is an easy way to lose context so we make sure that all relevant 
+metadata from the filename also gets embedding in the file itself.
+
 
 ## Metadata
 The `embedding.parquet` file is also a valid  [Geoparquet file](https://github.com/opengeospatial/geoparquet/blob/main/format-specs/geoparquet.md), with the expected metadata stored under the `geo` key. 
