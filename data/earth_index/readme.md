@@ -10,6 +10,11 @@
 Earth Index is a platform for tile-level geospatial search and classification of satellite imagery. Earth Index works by “pre-indexing” the planet for search using earth observation foundation models.
 
 ## Use Cases
+We've been using embeddings for human-in-the-loop tile-level search (approximate nearest neighbors) and classification (linear or other lightweight models). Some downstream applications include monitoring targets like:
+- [Poultry CAFOs](https://medium.com/earthrisemedia/finding-5-billion-chickens-with-human-in-the-loop-ai-model-tuning-via-earth-index-1d3f5cc89aec)
+- Artisinal gold mining
+- Infrastucture development (roads, dams, etc.)
+- Landfills and waste sites
 
 ## Data
 - **URL:** [tbd, on source.coop]
