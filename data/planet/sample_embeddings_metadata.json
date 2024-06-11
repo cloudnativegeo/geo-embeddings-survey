@@ -1,0 +1,279 @@
+{
+  "geo": {
+    "columns": {
+      "geometry": {
+        "bbox": [
+          -48.329200744628906,
+          -10.186158906091725,
+          -48.31958770751953,
+          -10.176697245905123
+        ],
+        "crs": {
+          "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+          "base_crs": {
+            "coordinate_system": {
+              "axis": [
+                {
+                  "abbreviation": "lat",
+                  "direction": "north",
+                  "name": "Latitude",
+                  "unit": "degree"
+                },
+                {
+                  "abbreviation": "lon",
+                  "direction": "east",
+                  "name": "Longitude",
+                  "unit": "degree"
+                }
+              ],
+              "subtype": "ellipsoidal"
+            },
+            "datum": {
+              "ellipsoid": {
+                "inverse_flattening": 298.257223563,
+                "name": "WGS 84",
+                "semi_major_axis": 6378137
+              },
+              "name": "World Geodetic System 1984",
+              "type": "GeodeticReferenceFrame"
+            },
+            "id": {
+              "authority": "EPSG",
+              "code": 4326
+            },
+            "name": "WGS 84"
+          },
+          "conversion": {
+            "method": {
+              "id": {
+                "authority": "EPSG",
+                "code": 1024
+              },
+              "name": "Popular Visualisation Pseudo Mercator"
+            },
+            "name": "unnamed",
+            "parameters": [
+              {
+                "id": {
+                  "authority": "EPSG",
+                  "code": 8801
+                },
+                "name": "Latitude of natural origin",
+                "unit": "degree",
+                "value": 0
+              },
+              {
+                "id": {
+                  "authority": "EPSG",
+                  "code": 8802
+                },
+                "name": "Longitude of natural origin",
+                "unit": "degree",
+                "value": 0
+              },
+              {
+                "id": {
+                  "authority": "EPSG",
+                  "code": 8806
+                },
+                "name": "False easting",
+                "unit": "metre",
+                "value": 0
+              },
+              {
+                "id": {
+                  "authority": "EPSG",
+                  "code": 8807
+                },
+                "name": "False northing",
+                "unit": "metre",
+                "value": 0
+              }
+            ]
+          },
+          "coordinate_system": {
+            "axis": [
+              {
+                "abbreviation": "",
+                "direction": "east",
+                "name": "Easting",
+                "unit": "metre"
+              },
+              {
+                "abbreviation": "",
+                "direction": "north",
+                "name": "Northing",
+                "unit": "metre"
+              }
+            ],
+            "subtype": "Cartesian"
+          },
+          "id": {
+            "authority": "EPSG",
+            "code": 3857
+          },
+          "name": "WGS 84 / Pseudo-Mercator",
+          "type": "ProjectedCRS"
+        },
+        "encoding": "WKB",
+        "geometry_types": [
+          "Polygon"
+        ]
+      }
+    },
+    "creator": {
+      "library": "geopandas",
+      "version": "0.14.3"
+    },
+    "primary_column": "geometry",
+    "version": "1.0.0"
+  },
+  "pandas": {
+    "column_indexes": [
+      {
+        "field_name": null,
+        "metadata": {
+          "encoding": "UTF-8"
+        },
+        "name": null,
+        "numpy_type": "object",
+        "pandas_type": "unicode"
+      }
+    ],
+    "columns": [
+      {
+        "field_name": "datetime",
+        "metadata": null,
+        "name": "datetime",
+        "numpy_type": "datetime64[ns]",
+        "pandas_type": "datetime"
+      },
+      {
+        "field_name": "centroid_lat",
+        "metadata": null,
+        "name": "centroid_lat",
+        "numpy_type": "float64",
+        "pandas_type": "float64"
+      },
+      {
+        "field_name": "centroid_lon",
+        "metadata": null,
+        "name": "centroid_lon",
+        "numpy_type": "float64",
+        "pandas_type": "float64"
+      },
+      {
+        "field_name": "geometry",
+        "metadata": null,
+        "name": "geometry",
+        "numpy_type": "object",
+        "pandas_type": "bytes"
+      },
+      {
+        "field_name": "related_to_event_id",
+        "metadata": null,
+        "name": "related_to_event_id",
+        "numpy_type": "object",
+        "pandas_type": "unicode"
+      },
+      {
+        "field_name": "chip_size",
+        "metadata": null,
+        "name": "chip_size",
+        "numpy_type": "int64",
+        "pandas_type": "int64"
+      },
+      {
+        "field_name": "embedding_thumbnail_uri",
+        "metadata": null,
+        "name": "embedding_thumbnail_uri",
+        "numpy_type": "object",
+        "pandas_type": "unicode"
+      },
+      {
+        "field_name": "zeros_percent",
+        "metadata": null,
+        "name": "zeros_percent",
+        "numpy_type": "Int64",
+        "pandas_type": "int64"
+      },
+      {
+        "field_name": "clear_percent",
+        "metadata": null,
+        "name": "clear_percent",
+        "numpy_type": "Int64",
+        "pandas_type": "int64"
+      },
+      {
+        "field_name": "cloud_percent",
+        "metadata": null,
+        "name": "cloud_percent",
+        "numpy_type": "Int64",
+        "pandas_type": "int64"
+      },
+      {
+        "field_name": "haze_percent",
+        "metadata": null,
+        "name": "haze_percent",
+        "numpy_type": "Int64",
+        "pandas_type": "int64"
+      },
+      {
+        "field_name": "cloud_shadow_percent",
+        "metadata": null,
+        "name": "cloud_shadow_percent",
+        "numpy_type": "Int64",
+        "pandas_type": "int64"
+      },
+      {
+        "field_name": "snow_percent",
+        "metadata": null,
+        "name": "snow_percent",
+        "numpy_type": "Int64",
+        "pandas_type": "int64"
+      },
+      {
+        "field_name": "nodata_percent",
+        "metadata": null,
+        "name": "nodata_percent",
+        "numpy_type": "Int64",
+        "pandas_type": "int64"
+      },
+      {
+        "field_name": "udm1_cloud_percent",
+        "metadata": null,
+        "name": "udm1_cloud_percent",
+        "numpy_type": "Int64",
+        "pandas_type": "int64"
+      },
+      {
+        "field_name": "udm1_suspect_pixel_percent",
+        "metadata": null,
+        "name": "udm1_suspect_pixel_percent",
+        "numpy_type": "Int64",
+        "pandas_type": "int64"
+      },
+      {
+        "field_name": "embedding",
+        "metadata": null,
+        "name": "embedding",
+        "numpy_type": "object",
+        "pandas_type": "list[float32]"
+      }
+    ],
+    "creator": {
+      "library": "pyarrow",
+      "version": "15.0.0"
+    },
+    "index_columns": [
+      {
+        "kind": "range",
+        "name": null,
+        "start": 0,
+        "step": 1,
+        "stop": 5
+      }
+    ],
+    "pandas_version": "2.2.1"
+  }
+}
